@@ -30,7 +30,7 @@ public class StudentCourseRegistration
 
     // 🔗 Navigation properties
     [ForeignKey("StudentID")]
-    public Student? Student { get; set; }
+    public User? User { get; set; }
 
     [ForeignKey("CourseID")]
     public Course? Course { get; set; }
