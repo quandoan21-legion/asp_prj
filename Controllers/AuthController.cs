@@ -27,9 +27,13 @@ public class AuthController : ControllerBase
         {
             return BadRequest(new { message = "Username or Email already exists" });
         }
-
-        // Hash password before storing
+        
         user.PasswordHash = HashPassword(user.PasswordHash);
+        
+        user.Phone ??= string.Empty;
+        user.FirstName = user.FirstName?.Trim() ?? string.Empty;
+        user.LastName = user.LastName?.Trim() ?? string.Empty;
+        user.RegistrationDate = DateTime.UtcNow;
 
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
