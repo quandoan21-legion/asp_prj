@@ -140,6 +140,7 @@
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/MyApi.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/MyApi.pdb
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Humanizer.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.Build.Locator.dll
@@ -163,6 +164,12 @@
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Microsoft.OpenApi.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Mono.TextTemplating.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/Npgsql.dll
@@ -176,6 +183,7 @@
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/System.Composition.Hosting.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/System.Composition.Runtime.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/System.Composition.TypedParts.dll
+/home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/System.Text.Json.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll
 /home/juan/RiderProjects/asp_prj/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll
