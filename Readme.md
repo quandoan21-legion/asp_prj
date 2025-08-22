@@ -26,3 +26,9 @@ dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 dotnet add package Microsoft.IdentityModel.Tokens
 
 # asp_prj
+```
+
+### 2. Restore database
+```bash
+dotnet ef database update
+
