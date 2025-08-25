@@ -49,7 +49,7 @@ public class CoursesController : ControllerBase
         _context.Courses.Add(course);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetCourseById), new { id = course.CourseID }, course);
+        return CreatedAtAction(nameof(GetCourseById), new { id = course.CourseId }, course);
     }
 
     // GET: api/courses/{id}
@@ -78,7 +78,7 @@ public class CoursesController : ControllerBase
 
         // Duplicate check (case-insensitive), excluding current course
         bool duplicate = await _context.Courses.AnyAsync(c =>
-            c.CourseID != id &&
+            c.CourseId != id &&
             (c.Title.ToLower() == updatedCourse.Title.ToLower() ||
              c.Code.ToLower() == updatedCourse.Code.ToLower()));
 
@@ -124,7 +124,7 @@ public class CoursesController : ControllerBase
             message = "Course deleted successfully",
             deleted = new
             {
-                id = course.CourseID,
+                id = course.CourseId,
                 code = course.Code,
                 title = course.Title
             }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/quandoan/RiderProjects/asp_prj/MyApi.csproj": {}
+    "/home/juan/RiderProjects/asp_prj/MyApi.csproj": {}
   },
   "projects": {
-    "/Users/quandoan/RiderProjects/asp_prj/MyApi.csproj": {
+    "/home/juan/RiderProjects/asp_prj/MyApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/quandoan/RiderProjects/asp_prj/MyApi.csproj",
+        "projectUniqueName": "/home/juan/RiderProjects/asp_prj/MyApi.csproj",
         "projectName": "MyApi",
-        "projectPath": "/Users/quandoan/RiderProjects/asp_prj/MyApi.csproj",
-        "packagesPath": "/Users/quandoan/.nuget/packages/",
-        "outputPath": "/Users/quandoan/RiderProjects/asp_prj/obj/",
+        "projectPath": "/home/juan/RiderProjects/asp_prj/MyApi.csproj",
+        "packagesPath": "/home/juan/.nuget/packages/",
+        "outputPath": "/home/juan/RiderProjects/asp_prj/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/quandoan/.nuget/NuGet/NuGet.Config"
+          "/home/juan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -86,6 +86,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.7, 9.0.7]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -94,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

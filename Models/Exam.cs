@@ -27,5 +27,5 @@ public class Exam
 
     public int CourseId { get; set; }
 
-    [ForeignKey("CourseID")] public Course Course { get; set; } = null!;
+    [ForeignKey("CourseId")] public Course Course { get; set; } = null!;
 }

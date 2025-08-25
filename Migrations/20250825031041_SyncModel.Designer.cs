@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyApi.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250825031041_SyncModel")]
+    partial class SyncModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +27,11 @@ namespace MyApi.Migrations
 
             modelBuilder.Entity("MyApi.Models.Course", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("CourseID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CourseId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CourseID"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -55,7 +58,7 @@ namespace MyApi.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("CourseID");
 
                     b.ToTable("Courses");
                 });
@@ -73,6 +76,9 @@ namespace MyApi.Migrations
 
                     b.Property<DateTime>("ApplicationOpen")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("CourseID")
+                        .HasColumnType("integer");
 
                     b.Property<int>("CourseId")
                         .HasColumnType("integer");
@@ -99,7 +105,7 @@ namespace MyApi.Migrations
 
                     b.HasKey("ExamId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("CourseID");
 
                     b.ToTable("Exams");
                 });
@@ -245,9 +251,7 @@ namespace MyApi.Migrations
                 {
                     b.HasOne("MyApi.Models.Course", "Course")
                         .WithMany()
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CourseID");
 
                     b.Navigation("Course");
                 });

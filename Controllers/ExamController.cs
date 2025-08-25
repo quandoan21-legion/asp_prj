@@ -56,10 +56,10 @@ public class ExamsController : ControllerBase
         if (exam.ApplicationOpen >= exam.ApplicationClose)
             return BadRequest(new { message = "ApplicationOpen must be before ApplicationClose" });
 
-        if (exam.CourseId <= 0)
-            return BadRequest(new { message = "CourseID is required" });
+        // if (exam.CourseId <= 0)
+        //     return BadRequest(new { message = "CourseID is required" });
 
-        var courseExists = await _context.Courses.AnyAsync(c => c.CourseID == exam.CourseId);
+        var courseExists = await _context.Courses.AnyAsync(c => c.CourseId == exam.CourseId);
         if (!courseExists)
             return BadRequest(new { message = $"CourseID {exam.CourseId} does not exist" });
 
@@ -80,7 +80,7 @@ public class ExamsController : ControllerBase
 
     // PUT: api/exams/{id}
     [HttpPut("{id}")]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateExam(int id, [FromBody] Exam updatedExam)
     {
         // Ignore navigation validation
@@ -100,7 +100,7 @@ public class ExamsController : ControllerBase
         if (updatedExam.CourseId <= 0)
             return BadRequest(new { message = "CourseID is required" });
 
-        var courseExists = await _context.Courses.AnyAsync(c => c.CourseID == updatedExam.CourseId);
+        var courseExists = await _context.Courses.AnyAsync(c => c.CourseId == updatedExam.CourseId);
         if (!courseExists)
             return BadRequest(new { message = $"CourseID {updatedExam.CourseId} does not exist" });
 
