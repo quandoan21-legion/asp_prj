@@ -70,7 +70,16 @@ public class ExamsController : ControllerBase
             e.Name.ToLower() == exam.Name.ToLower());
 
         if (exists)
-            return BadRequest(new { message = $"Exam '{exam.Name}' on {exam.ExamDate:d} already exists for this course" });
+            return BadRequest(new
+                { message = $"Exam '{exam.Name}' on {exam.ExamDate:d} already exists for this course" });
+
+
+        // Ensure all DateTime values are UTC before saving
+        exam.ExamDate = DateTime.SpecifyKind(exam.ExamDate, DateTimeKind.Utc);
+        exam.ApplicationOpen = DateTime.SpecifyKind(exam.ApplicationOpen, DateTimeKind.Utc);
+        exam.ApplicationClose = DateTime.SpecifyKind(exam.ApplicationClose, DateTimeKind.Utc);
+        if (exam.ResultPublishDate.HasValue)
+            exam.ResultPublishDate = DateTime.SpecifyKind(exam.ResultPublishDate.Value, DateTimeKind.Utc);
 
         _context.Exams.Add(exam);
         await _context.SaveChangesAsync();
@@ -107,12 +116,16 @@ public class ExamsController : ControllerBase
         // Prevent duplicates excluding current exam
         var duplicate = await _context.Exams.AnyAsync(e =>
             e.ExamId != id &&
-            e.CourseId== updatedExam.CourseId&&
+            e.CourseId == updatedExam.CourseId &&
             e.ExamDate.Date == updatedExam.ExamDate.Date &&
             e.Name.ToLower() == updatedExam.Name.ToLower());
 
         if (duplicate)
-            return BadRequest(new { message = $"Another exam '{updatedExam.Name}' on {updatedExam.ExamDate:d} already exists for this course" });
+            return BadRequest(new
+            {
+                message =
+                    $"Another exam '{updatedExam.Name}' on {updatedExam.ExamDate:d} already exists for this course"
+            });
 
         // Apply updates
         exam.Name = updatedExam.Name;
@@ -145,7 +158,6 @@ public class ExamsController : ControllerBase
         {
             message = "Exam deleted successfully",
             deleted = new { exam.ExamId, exam.Name, exam.ExamDate }
-            
         });
     }
 }

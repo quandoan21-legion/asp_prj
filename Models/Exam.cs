@@ -25,7 +25,7 @@ public class Exam
 
     public bool IsActive { get; set; } = true;
 
-    public int CourseId { get; set; }
+    public int? CourseId { get; set; }
 
-    [ForeignKey("CourseId")] public Course Course { get; set; } = null!;
+    [ForeignKey("CourseId")] public Course? Course { get; set; }
 }
