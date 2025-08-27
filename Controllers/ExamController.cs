@@ -25,9 +25,9 @@ public class ExamsController : ControllerBase
             .Include(e => e.Course) // eager load course info
             .ToListAsync();
 
+        
         return Ok(exams);
     }
-
     // GET: api/exams/{id}
     [HttpGet("{id}")]
     public async Task<IActionResult> GetExamById(int id)

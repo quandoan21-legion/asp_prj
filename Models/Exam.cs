@@ -27,5 +27,11 @@ public class Exam
 
     public int? CourseId { get; set; }
 
+    // Add validation method
+    public bool IsValidDateRange()
+    {
+        return ApplicationOpen < ApplicationClose;
+    }
+
     [ForeignKey("CourseId")] public Course? Course { get; set; }
 }
